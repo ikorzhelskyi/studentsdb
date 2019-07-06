@@ -30,3 +30,10 @@ h1, h2, h3, h4, h5, h6 {
 #navigate-month {
   margin-bottom: 10px;
 }
+
+#buttonsEditStudent {
+  border-top: 2px solid #dddddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eeeeee;
+}
