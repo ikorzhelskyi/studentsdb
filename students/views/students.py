@@ -3,24 +3,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from ..models import Student
+
 def students_list(request):
-    students = (
-        {'id': 1,
-         'first_name': u'Андрій',
-         'last_name': u'Вірт',
-         'ticket': 2501,
-         'image': 'img/student_1.jpg'},
-        {'id': 2,
-         'first_name': u'Юрій',
-         'last_name': u'Семчук',
-         'ticket': 2548,
-         'image': 'img/student_2.jpg'},
-        {'id': 3,
-         'first_name': u'Роман',
-         'last_name': u'Ярощак',
-         'ticket': 2557,
-         'image': 'img/student_3.jpg'},
-        )
+    students = Student.objects.all()
     return render(request, 'students/students_list.html',
         {'students': students})
 
