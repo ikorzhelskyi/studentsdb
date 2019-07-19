@@ -15,9 +15,24 @@
     <tr>
       <th><a href="#">#</a></th>
       <th>Фото</th>
-      <th><a href="#">Прізвище &uarr;</a></th>
-      <th><a href="#">Ім'я</a></th>
-      <th><a href="#">№ Білету</a></th>
+      <th>
+        <a href="{% url "home" %}?order_by=last_name">
+          Прізвище
+          {% if request.GET.order_by == 'last_name' %}&uarr;{% endif %}
+        </a>
+      </th>
+      <th>
+        <a href="{% url "home" %}?order_by=first_name">
+          Ім'я
+          {% if request.GET.order_by == 'first_name' %}&uarr;{% endif %}
+        </a>
+      </th>
+      <th>
+        <a href="{% url "home" %}?order_by=ticket">
+          № Білету
+          {% if request.GET.order_by == 'ticket' %}&uarr;{% endif %}
+        </a>
+      </th>
       <th>Дії</th>
     </tr>
   </thead>
