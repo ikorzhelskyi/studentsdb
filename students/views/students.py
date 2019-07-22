@@ -14,6 +14,9 @@ def students_list(request):
         students = students.order_by(order_by)
         if request.GET.get('reverse', '') == '1':
             students = students.reverse()
+    else:
+        order_by = 'last_name'
+        students = students.order_by(order_by)
 
     return render(request, 'students/students_list.html',
         {'students': students})
