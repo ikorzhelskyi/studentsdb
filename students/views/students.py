@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 #from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..models import Student
+from ..models import Student, Group
 
 def students_list(request):
     students = Student.objects.all()
@@ -67,7 +67,7 @@ def students_list(request):
 
 def students_add(request):
     return render(request, 'students/students_add.html',
-        {})
+        {'groups': Group.objects.all().order_by('title')})
 
 def students_edit(request, sid):
     return HttpResponse('<h1>Edit Student %s</h1>' % sid)
