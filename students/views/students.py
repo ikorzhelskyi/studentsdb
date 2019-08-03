@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 #from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from ..models import Student, Group
@@ -66,8 +67,45 @@ def students_list(request):
             )
 
 def students_add(request):
-    return render(request, 'students/students_add.html',
-        {'groups': Group.objects.all().order_by('title')})
+    # was form posted?
+    if request.method == "POST":
+        # was form add button clicked?
+        if request.POST.get('add_button') is not None:
+
+            # TODO: validate input from user
+            errors = {}
+
+            if not errors:
+                # create student object
+                student = Student(
+                    first_name=request.POST['first_name'],
+                    last_name=request.POST['last_name'],
+                    middle_name=request.POST['middle_name'],
+                    birthday=request.POST['birthday'],
+                    ticket=request.POST['ticket'],
+                    student_group=
+                        Group.objects.get(pk=request.POST['student_group']),
+                    photo=request.FILES['photo'],
+                )
+
+                # save it to database
+                student.save()
+
+                # redirect to students list
+                return HttpResponseRedirect(reverse('home'))
+
+            else:
+                # render form with errors and previous user input
+                return render(request, 'students/students_add.html',
+                    {'groups': Group.objects.all().order_by('title'),
+                     'errors': errors})
+        elif request.POST.get('cancel_button') is not None:
+            # redirect to home page on cancel button
+            return HttpResponseRedirect(reverse('home'))
+    else:
+        # initial form render
+        return render(request, 'students/students_add.html',
+            {'groups': Group.objects.all().order_by('title')})
 
 def students_edit(request, sid):
     return HttpResponse('<h1>Edit Student %s</h1>' % sid)
