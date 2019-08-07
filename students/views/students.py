@@ -6,6 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 #from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from PIL import Image
+
 from ..models import Student, Group
 
 def students_list(request):
@@ -120,7 +122,24 @@ def students_add(request):
 
             photo = request.FILES.get('photo')
             if photo:
-                data['photo'] = photo
+                try:
+                    img = Image.open(photo)
+                    file_size = request.FILES['photo'].size
+
+                    if img.format in ('JPG', 'JPEG', 'PNG', 'BMP'):
+                        if file_size < 2097152:
+                            data['photo'] = photo
+                        else:
+                            errors['photo'] = u'Розмір файлу зображення\
+                                 не може перевищувати 2Мб'
+                    else:
+                        errors['photo'] = u'Невірний формат зображення.\
+                            Будь-ласка завантажте в одному з форматів:\
+                             *.jpg, *.jpeg, *.png або *.bmp'
+                except Exception:
+                    errors['photo'] = u'Невірний формат зображення.\
+                            Будь-ласка завантажте в одному з форматів:\
+                             *.jpg, *.jpeg, *.png або *.bmp'
 
             # save student
             if not errors:
