@@ -114,7 +114,7 @@ def students_add(request):
             else:
                 groups = Group.objects.filter(pk=student_group)
                 if len(groups) != 1:
-                    errors['students_group'] = u"Оберіть коректну групу"
+                    errors['student_group'] = u"Оберіть коректну групу"
                 else:
                     data['student_group'] = groups[0]
 
