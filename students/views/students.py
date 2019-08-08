@@ -149,8 +149,8 @@ def students_add(request):
 
                 # redirect to students list
                 return HttpResponseRedirect(
-                    u'%s?status_message=Студента успішно додано!' %
-                    reverse('home'))
+                    u'%s?status_message=Студента %s %s успішно додано!' %
+                    (reverse('home'), first_name, last_name))
             else:
                 # render form with errors and previous user input
                 return render(request, 'students/students_add.html',
