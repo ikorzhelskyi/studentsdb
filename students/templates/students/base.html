@@ -46,10 +46,12 @@
         {% url 'home' as home_page %}
         {% url 'journal' as journal_page %}
         {% url 'groups' as groups_page %}
+        {% url 'contact-admin' as contact_admin %}
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" {% if request.path == home_page %} class="active" {% endif %}><a href="{{ home_page }}">Студенти</a></li>
           <li role="presentation" {% if journal_page in request.path %} class="active" {% endif %}><a href="{{ journal_page }}">Відвідування</a></li>
           <li role="presentation" {% if groups_page in request.path %} class="active" {% endif %}><a href="{{ groups_page }}">Групи</a></li>
+          <li role="presentation" {% if contact_admin in request.path %} class="active" {% endif %}><a href="{{ contact_admin }}">Контакт</a></li>
         </ul>
       </div>
     </div>
