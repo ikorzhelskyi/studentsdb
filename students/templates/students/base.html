@@ -46,7 +46,7 @@
         {% url 'home' as home_page %}
         {% url 'journal' as journal_page %}
         {% url 'groups' as groups_page %}
-        {% url 'contact-admin' as contact_admin %}
+        {% url 'contact_admin' as contact_admin %}
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" {% if request.path == home_page %} class="active" {% endif %}><a href="{{ home_page }}">Студенти</a></li>
           <li role="presentation" {% if journal_page in request.path %} class="active" {% endif %}><a href="{{ journal_page }}">Відвідування</a></li>

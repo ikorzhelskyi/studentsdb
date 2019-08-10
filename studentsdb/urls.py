@@ -28,7 +28,7 @@ urlpatterns = patterns('',
 
     # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin',
-        name='contact_admin'),
+         name='contact_admin'),
 )
 
 if DEBUG:
