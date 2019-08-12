@@ -15,6 +15,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # PORTAL_URL = 'http://localhost:8000'
 
+# email settings
+# please, set here you smtp server details and your admin email
+ADMIN_EMAIL = 'ihork2109@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '********'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
