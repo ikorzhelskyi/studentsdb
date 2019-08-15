@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from students.views.students import StudentUpdateView
+
 from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = patterns('',
@@ -8,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', 'students.views.students.students_list', name='home'),
     url(r'^students/add/$', 'students.views.students.students_add',
          name='students_add'),
-    url(r'^students/(?P<sid>\d+)/edit/$', 'students.views.students.students_edit',
+    url(r'^students/(?P<pk>\d+)/edit/$', StudentUpdateView.as_view(),
          name='students_edit'),
     url(r'^students/(?P<sid>\d+)/delete/$', 'students.views.students.students_delete',
          name='students_delete'),
