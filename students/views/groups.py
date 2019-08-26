@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.forms import ModelForm
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -87,5 +87,10 @@ class GroupUpdateView(UpdateView):
         else:
             return super(GroupUpdateView, self).post(request, *args, **kwargs)
 
-def groups_delete(request, gid):
-    return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+class GroupDeleteView(DeleteView):
+    model = Group
+    template_name = 'students/groups_confirm_delete.html'
+
+    def get_success_url(self):
+        return u'%s?status_message=Групу успішно видалено!' \
+            % reverse('groups')
