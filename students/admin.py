@@ -1,6 +1,10 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
+
 from .models import Student, Group
 
-# Register your models here.
-admin.site.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Student, StudentAdmin)
 admin.site.register(Group)
