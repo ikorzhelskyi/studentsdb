@@ -35,13 +35,18 @@ class StudentAdmin(admin.ModelAdmin):
         return reverse('students_edit', kwargs={'pk': obj.id})
 
 class GroupFormAdmin(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(GroupFormAdmin, self).__init__(*args, **kwargs)
+        self.fields['leader'].queryset =\
+             self.instance.student_set.order_by('last_name')
 
     def clean_leader(self):
         """ Check if leader is in the same group """
         queryset = Student.objects.filter(student_group=self.instance)
         new_leader = self.cleaned_data['leader']
-        if new_leader and new_leader not in queryset:
-            raise ValidationError(u"Студент не входить до даної групи!")
+        if hasattr(new_leader, 'student_group') and new_leader.student_group != self.instance:
+            raise ValidationError(u"Студент не входить до даної групи!",
+                code='invalid')
         return new_leader
 
 class GroupAdmin(admin.ModelAdmin):
