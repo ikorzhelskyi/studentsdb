@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
-from django.forms import ModelForm
+from django.forms import ModelForm, ValidationError
 from django.views.generic import UpdateView, DeleteView
 
 from crispy_forms.helper import FormHelper
@@ -69,6 +69,17 @@ class GroupUpdateForm(ModelForm):
             Submit('add_button', u'Зберегти', css_class="btn btn-primary"),
             Submit('cancel_button', u'Скасувати', css_class="btn btn-link"),
         )
+
+        self.fields['leader'].queryset =\
+             self.instance.student_set.order_by('last_name')
+
+    def clean_leader(self):
+        """ Check if leader is in the same group """
+        new_leader = self.cleaned_data['leader']
+        if hasattr(new_leader, 'student_group') and new_leader.student_group != self.instance:
+            raise ValidationError(u"Студент не входить до даної групи!",
+                code='invalid')
+        return new_leader
 
 class GroupUpdateView(UpdateView):
     model = Group
