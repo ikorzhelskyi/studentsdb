@@ -9,7 +9,6 @@ class StudentFormAdmin(ModelForm):
 
     def clean_student_group(self):
         """Check if student is leader in any group.
-
         If yes, then ensure it's the same as selected group."""
         # get group where current student is a leader
         groups = Group.objects.filter(leader=self.instance)
@@ -17,7 +16,6 @@ class StudentFormAdmin(ModelForm):
             self.cleaned_data['student_group'] != groups[0]:
             raise ValidationError(u'Студент є старостою іншої групи.',
                 code='invalid')
-
         return self.cleaned_data['student_group']
 
 class StudentAdmin(admin.ModelAdmin):
@@ -42,9 +40,9 @@ class GroupFormAdmin(ModelForm):
 
     def clean_leader(self):
         """ Check if leader is in the same group """
-        queryset = Student.objects.filter(student_group=self.instance)
         new_leader = self.cleaned_data['leader']
-        if hasattr(new_leader, 'student_group') and new_leader.student_group != self.instance:
+        if hasattr(new_leader, 'student_group') and (
+        	    new_leader.student_group != self.instance):
             raise ValidationError(u"Студент не входить до даної групи!",
                 code='invalid')
         return new_leader
