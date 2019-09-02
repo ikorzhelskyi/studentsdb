@@ -29,6 +29,14 @@ class StudentAdmin(admin.ModelAdmin):
         'notes']
     form = StudentFormAdmin
 
+    actions = ['copy_students']
+    def copy_students(self, request, queryset):
+        for student in queryset.values():
+            student.pop('id')
+            Student(**student).save()
+        self.message_user(request, u"Скопійовано студентів: %s" % len(queryset))
+    copy_students.short_description = u"Копіювати студентів"
+
     def view_on_site(self, obj):
         return reverse('students_edit', kwargs={'pk': obj.id})
 
