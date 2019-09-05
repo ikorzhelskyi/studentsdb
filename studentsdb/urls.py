@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
+from students.views.journal import JournalView
 
 from .settings import MEDIA_ROOT, DEBUG
 
@@ -26,7 +27,7 @@ urlpatterns = patterns('',
          name='groups_delete'),
 
     # Journal url
-    url(r'^journal/$', 'students.views.journal.journal', name='journal'),
+    url(r'^journal/$', JournalView.as_view(), name='journal'),
 
     url(r'^admin/', include(admin.site.urls)),
 
