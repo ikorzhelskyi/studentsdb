@@ -28,6 +28,10 @@ th.day-header {
   text-align: center;
 }
 
+#ajax-progress-indicator {
+  display: none;
+}
+
 /* Footer Styles */
 #footer {
   border-top: 1px solid #dddddd;
