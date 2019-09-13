@@ -27,7 +27,7 @@ urlpatterns = patterns('',
          name='groups_delete'),
 
     # Journal url
-    url(r'^journal/$', JournalView.as_view(), name='journal'),
+    url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
 
     url(r'^admin/', include(admin.site.urls)),
 
