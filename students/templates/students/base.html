@@ -32,8 +32,9 @@
         <strong>Група:</strong>
         <select>
           <option value="">Усі Студенти</option>
-          <option value="">ІМЗ - 21, Вірт Андрій (№ 2501)</option>
-          <option value="">ІМЗ - 22, Ярощак Роман (№ 2557)</option>
+          {% for group in GROUPS %}
+          <option value="{{ group.id }}"{% if group.selected %}selected="1"{% endif %}>{{ group.title }}{% if group.leader %}, {{ group.leader }}{% endif %}</option>
+          {% endfor %}
         </select>
       </div>
       {% endblock groups_selector %}
