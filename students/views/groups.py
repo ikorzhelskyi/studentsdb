@@ -15,12 +15,13 @@ from ..models import Group
 from ..util import paginate, get_current_group
 
 def groups_list(request):
+    """Returns page with list of groups."""
     # check if we need to show only one group of students
     current_group = get_current_group(request)
     if current_group:
         groups = Group.objects.filter(id=current_group.id)
     else:
-        # otherwise show all students
+        # otherwise show all groups
         groups = Group.objects.all()
 
     # try to order groups list
