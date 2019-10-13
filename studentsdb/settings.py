@@ -78,16 +78,20 @@ from .db import DATABASES
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+# enalbe Django i18n framework
 USE_I18N = True
 
+# default language
+LANGUAGE_CODE = 'uk'
+
+# enable Django localization
 USE_L10N = True
 
+# use zone-aware date objects
 USE_TZ = True
 
+# default timezone
+TIME_ZONE = 'UTC'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
