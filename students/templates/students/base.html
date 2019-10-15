@@ -1,10 +1,11 @@
+{% load i18n %}
 {% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8"/>
-  <title>Сервіс Обліку Студентів - {% block meta_title %}{% endblock meta_title %}</title>
-  <meta name="description" value="Система Обліку Студентів Навчального Закладу" />
+  <title>{% trans "Students Accounting Service" %} - {% block meta_title %}{% endblock meta_title %}</title>
+  <meta name="description" value="{% trans "App to manage students database" %}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet"
@@ -26,14 +27,14 @@
     <div class="row" id="header">
       {% block logo %}
       <div class="col-xs-8">
-        <h1>Сервіс Обліку Студентів </h1>
+        <h1>{% trans "Students Accounting Service" %}</h1>
       </div>
       {% endblock logo %}
       {% block groups_selector %}
       <div class="col-xs-4" id="group-selector">
-        <strong>Група:</strong>
+        <strong>{% trans "Group" %}:</strong>
         <select>
-          <option value="">Усі Студенти</option>
+          <option value="">{% trans "All Students" %}</option>
           {% for group in GROUPS %}
           <option value="{{ group.id }}"{% if group.selected %}selected="1"{% endif %}>{{ group.title }}{% if group.leader %}, {{ group.leader }}{% endif %}</option>
           {% endfor %}
@@ -51,10 +52,10 @@
         {% url 'groups' as groups_page %}
         {% url 'contact_admin' as contact_admin %}
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" {% if request.path == home_page %} class="active" {% endif %}><a href="{{ home_page }}">Студенти</a></li>
-          <li role="presentation" {% if journal_page in request.path %} class="active" {% endif %}><a href="{{ journal_page }}">Відвідування</a></li>
-          <li role="presentation" {% if groups_page in request.path %} class="active" {% endif %}><a href="{{ groups_page }}">Групи</a></li>
-          <li role="presentation" {% if contact_admin in request.path %} class="active" {% endif %}><a href="{{ contact_admin }}">Контакт</a></li>
+          <li role="presentation" {% if request.path == home_page %} class="active" {% endif %}><a href="{{ home_page }}">{% trans "Students" %}</a></li>
+          <li role="presentation" {% if journal_page in request.path %} class="active" {% endif %}><a href="{{ journal_page }}">{% trans "Journal" %}</a></li>
+          <li role="presentation" {% if groups_page in request.path %} class="active" {% endif %}><a href="{{ groups_page }}">{% trans "Groups" %}</a></li>
+          <li role="presentation" {% if contact_admin in request.path %} class="active" {% endif %}><a href="{{ contact_admin }}">{% trans "Contact" %}</a></li>
         </ul>
       </div>
     </div>
@@ -81,7 +82,7 @@
     {% block footer %}
     <div class="row" id="footer">
       <div class="col-xs-12">
-        &copy; 2019 Сервіс Обліку Студентів
+        &copy; 2019 {% trans "Students Accounting Service" %}
       </div>
     </div>
     {% endblock footer %}
@@ -114,6 +115,7 @@
   <script src="{% static "js/jquery.cookie.js" %}"></script>
   <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
   <script src="{% static "js/main.js" %}"></script>
   {% block extra_js %}{% endblock extra_js %}
 </body>
