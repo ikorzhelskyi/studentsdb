@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.forms import ModelForm, ValidationError
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.utils.translation import ugettext as _
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -79,14 +78,14 @@ class GroupForm(ModelForm):
 
         # add buttons
         if add_form:
-            submit = Submit('add_button', u'Додати',
+            submit = Submit('add_button', _(u"Add"),
                 css_class="btn btn-primary")
         else:
-            submit = Submit('save_button', u'Зберегти',
+            submit = Submit('save_button', _(u"Save"),
                 css_class="btn btn-primary")
         self.helper.layout[-1] = FormActions(
             submit,
-            Submit('cancel_button', u'Скасувати', css_class="btn btn-link"),
+            Submit('cancel_button', _(u"Cancel"), css_class="btn btn-link"),
         )
 
         self.fields['leader'].queryset =\
@@ -96,21 +95,21 @@ class GroupForm(ModelForm):
         """ Check if leader is in the same group """
         new_leader = self.cleaned_data['leader']
         if hasattr(new_leader, 'student_group') and new_leader.student_group != self.instance:
-            raise ValidationError(u"Студент не входить до даної групи!",
+            raise ValidationError (_(u"Student is not in this group!"),
                 code='invalid')
         return new_leader
 
 class BaseGroupFormView(object):
 
     def get_success_url(self):
-        return u'%s?status_message=Зміни успішно збережено!' \
-            % reverse('groups')
+        return u'%s?status_message=%s' % (reverse('groups'),
+            _(u"Changes saved successfully!"))
 
     def post(self, request, *args, **kwargs):
         # handle cancel button
         if request.POST.get('cancel_button'):
             return HttpResponseRedirect(reverse('groups') +
-                u'?status_message=Зміни скасовано.')
+                u'?status_message=%s' % _(u"Changes canceled."))
         else:
             return super(BaseGroupFormView, self).post(
                 request, *args, **kwargs)
