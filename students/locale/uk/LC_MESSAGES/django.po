@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-15 19:26+0000\n"
+"POT-Creation-Date: 2019-10-17 17:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,11 +206,12 @@ msgstr "Вибрати Групу"
 msgid "Extra Notes"
 msgstr "Додаткові Нотатки"
 
-#: templates/students/students_add.html:105
+#: templates/students/students_add.html:105 views/groups.py:81
 msgid "Add"
 msgstr "Додати"
 
-#: templates/students/students_add.html:108
+#: templates/students/students_add.html:108 views/groups.py:88
+#: views/students.py:205
 msgid "Cancel"
 msgstr "Відмінити"
 
@@ -240,3 +241,105 @@ msgstr "№ Білету"
 #: templates/students/students_list.html:67
 msgid "Action"
 msgstr "Дія"
+
+#: views/contact_admin.py:37
+msgid "Send"
+msgstr "Надіслати"
+
+#: views/contact_admin.py:40
+msgid "Your Email Address"
+msgstr "Ваша Емейл Адреса"
+
+#: views/contact_admin.py:43
+msgid "Email Subject"
+msgstr "Заголовок Листа"
+
+#: views/contact_admin.py:47
+msgid "Email Body"
+msgstr "Текст Повідомлення"
+
+#: views/contact_admin.py:66
+msgid "An error occured during email transfer. Please, try again later."
+msgstr ""
+"Під час відправки листа виникла непередбачувана помилка. Спробуйте "
+"скористатись даною формою пізніше."
+
+#: views/contact_admin.py:71
+msgid "Message sent successfully!"
+msgstr "Повідомлення успішно надіслано!"
+
+#: views/groups.py:84 views/students.py:204
+msgid "Save"
+msgstr "Зберегти"
+
+#: views/groups.py:98
+msgid "Student is not in this group!"
+msgstr "Студент не належить до даної групи!"
+
+#: views/groups.py:106
+msgid "Changes saved successfully!"
+msgstr "Зміни успішно збережено!"
+
+#: views/groups.py:112
+msgid "Changes canceled."
+msgstr "Зміни скасовано."
+
+#: views/students.py:97
+msgid "First Name field is required"
+msgstr "Ім'я є обов'язковим"
+
+#: views/students.py:103
+msgid "Last Name field is required"
+msgstr "Прізвище є обов'язковим"
+
+#: views/students.py:109
+msgid "Birthday is required"
+msgstr "Дата народження є обов'язковою"
+
+#: views/students.py:115
+msgid "Please, enter correct date format (e.g. 1984-12-30)"
+msgstr "Будь-ласка, введіть правильний формат дати (напр. 1984-12-30"
+
+#: views/students.py:122
+msgid "Ticket number is required"
+msgstr "Номер білету є обов'язковим"
+
+#: views/students.py:128
+msgid "Please, select group"
+msgstr "Будь-ласка, оберіть групу"
+
+#: views/students.py:132
+msgid "Please, select correct group"
+msgstr "Будь-ласка, оберіть коректну групу"
+
+#: views/students.py:146
+msgid "Image file size cannot exceed 2MB"
+msgstr "Розмір файлу зображення не може перевищувати 2Мб"
+
+#: views/students.py:148
+msgid ""
+"Invalid image format.Please, upload in one of the formats: *.jpg, *.jpeg, *."
+"png or *.bmp"
+msgstr ""
+"Невірний формат зображення. Будь-ласка, завантажте в одному з форматів: *."
+"jpg, *.jpeg, *.png або *.bmp"
+
+#: views/students.py:165
+msgid "Student added successfully!"
+msgstr "Студента додано успішно!"
+
+#: views/students.py:175
+msgid "Student addition canceled!"
+msgstr "Додавання студента скасовано"
+
+#: views/students.py:226
+msgid "Student updated successfully!"
+msgstr "Студента оновлено успішно!"
+
+#: views/students.py:232
+msgid "Student update canceled!"
+msgstr "Редагування студента скасовано!"
+
+#: views/students.py:242
+msgid "Student deleted successfully!"
+msgstr "Студента видалено успішно!"
