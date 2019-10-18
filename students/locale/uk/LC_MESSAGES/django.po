@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 17:29+0000\n"
+"POT-Creation-Date: 2019-10-18 18:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models/groups.py:9 models/students.py:44 templates/students/base.html:35
+#: templates/students/students_add.html:83
+msgid "Group"
+msgstr "Група"
+
+#: models/groups.py:10 templates/students/base.html:57
+msgid "Groups"
+msgstr "Групи"
+
+#: models/groups.py:15 templates/students/groups_list.html:22
+msgid "Title"
+msgstr "Назва"
+
+#: models/groups.py:18 templates/students/groups_list.html:31
+msgid "Leader"
+msgstr "Cтароста"
+
+#: models/groups.py:25 models/students.py:51
+#: templates/students/students_add.html:96
+msgid "Extra Notes"
+msgstr "Додаткові Нотатки"
+
+#: models/monthjournal.py:9 templates/students/journal.html:7
+#: templates/students/journal.html.py:9
+msgid "Monthly Journal"
+msgstr "Місячні Журнали"
+
+#: models/monthjournal.py:10
+#, fuzzy
+#| msgid "Monthly Journal"
+msgid "Monthly Journals"
+msgstr "Місячні Журнали"
+
+#: models/monthjournal.py:13 models/students.py:9
+#: templates/students/journal.html:44
+msgid "Student"
+msgstr "Студент"
+
+#: models/monthjournal.py:19
+msgid "Date"
+msgstr "Дата"
+
+#: models/students.py:10 templates/students/base.html:55
+#: templates/students/students_list.html:7
+msgid "Students"
+msgstr "Студенти"
+
+#: models/students.py:15 templates/students/students_add.html:26
+#: templates/students/students_list.html:32
+msgid "First Name"
+msgstr "Ім'я"
+
+#: models/students.py:20 templates/students/students_add.html:36
+#: templates/students/students_list.html:23
+msgid "Last Name"
+msgstr "Прізвище"
+
+#: models/students.py:25 templates/students/students_add.html:46
+msgid "Middle Name"
+msgstr "По-Батькові"
+
+#: models/students.py:30 templates/students/students_add.html:56
+msgid "Birthday"
+msgstr "Дата Народження"
+
+#: models/students.py:35 templates/students/students_add.html:66
+#: templates/students/students_list.html:20
+msgid "Photo"
+msgstr "Фото"
+
+#: models/students.py:41 templates/students/students_add.html:74
+msgid "Ticket"
+msgstr "Білет"
 
 #: templates/contact_admin/form.html:9 templates/contact_admin/form.html:11
 msgid "Admin Contact Form"
@@ -38,25 +112,13 @@ msgstr "Сервіс Обліку Студентів"
 msgid "App to manage students database"
 msgstr "Система Обліку Студентів Навчального Закладу"
 
-#: templates/students/base.html:35 templates/students/students_add.html:83
-msgid "Group"
-msgstr "Група"
-
 #: templates/students/base.html:37
 msgid "All Students"
 msgstr "Усі Студенти"
 
-#: templates/students/base.html:55 templates/students/students_list.html:7
-msgid "Students"
-msgstr "Студенти"
-
 #: templates/students/base.html:56 templates/students/students_list.html:72
 msgid "Journal"
 msgstr "Відвідування"
-
-#: templates/students/base.html:57
-msgid "Groups"
-msgstr "Групи"
 
 #: templates/students/base.html:58
 msgid "Contact"
@@ -102,14 +164,6 @@ msgstr "Список Груп"
 msgid "Add Group"
 msgstr "Додати Групу"
 
-#: templates/students/groups_list.html:22
-msgid "Title"
-msgstr "Назва"
-
-#: templates/students/groups_list.html:31
-msgid "Leader"
-msgstr "Cтароста"
-
 #: templates/students/groups_list.html:50
 #: templates/students/students_list.html:46
 msgid "Actions"
@@ -124,10 +178,6 @@ msgstr "Редагувати"
 #: templates/students/students_list.html:73
 msgid "Delete"
 msgstr "Видалити"
-
-#: templates/students/journal.html:7 templates/students/journal.html.py:9
-msgid "Monthly Journal"
-msgstr "Місячні Журнали"
 
 #: templates/students/journal.html:17
 #, python-format
@@ -161,50 +211,15 @@ msgstr "Попередній Місяць"
 msgid "Next Month"
 msgstr "Наступний Місяць"
 
-#: templates/students/journal.html:44
-msgid "Student"
-msgstr "Студент"
-
 #: templates/students/students_add.html:7
 #: templates/students/students_add.html:9
 #: templates/students/students_list.html:12
 msgid "Add Student"
 msgstr "Додати Студента"
 
-#: templates/students/students_add.html:26
-#: templates/students/students_list.html:32
-msgid "First Name"
-msgstr "Ім'я"
-
-#: templates/students/students_add.html:36
-#: templates/students/students_list.html:23
-msgid "Last Name"
-msgstr "Прізвище"
-
-#: templates/students/students_add.html:46
-msgid "Middle Name"
-msgstr "По-Батькові"
-
-#: templates/students/students_add.html:56
-msgid "Birthday"
-msgstr "Дата Народження"
-
-#: templates/students/students_add.html:66
-#: templates/students/students_list.html:20
-msgid "Photo"
-msgstr "Фото"
-
-#: templates/students/students_add.html:74
-msgid "Ticket"
-msgstr "Білет"
-
 #: templates/students/students_add.html:87
 msgid "Select group"
 msgstr "Вибрати Групу"
-
-#: templates/students/students_add.html:96
-msgid "Extra Notes"
-msgstr "Додаткові Нотатки"
 
 #: templates/students/students_add.html:105 views/groups.py:81
 msgid "Add"
