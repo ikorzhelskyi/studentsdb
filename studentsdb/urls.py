@@ -7,6 +7,11 @@ from students.views.journal import JournalView
 
 from .settings import MEDIA_ROOT, DEBUG
 
+
+js_info_dict = {
+    'packages': ('students',),
+}
+
 urlpatterns = patterns('',
     # Students urls
     url(r'^$', 'students.views.students.students_list', name='home'),
@@ -26,14 +31,17 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<pk>\d+)/delete/$', GroupDeleteView.as_view(),
          name='groups_delete'),
 
-    # Journal url
+    # Journal urls
     url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
-
-    url(r'^admin/', include(admin.site.urls)),
 
     # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin',
-         name='contact_admin'),
+        name='contact_admin'),
+
+    url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
+
+    url(r'^admin/', include(admin.site.urls)),
+
 )
 
 if DEBUG:
