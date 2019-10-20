@@ -40,6 +40,8 @@ ALLOWED_HOSTS = []
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+REGISTRATION_OPEN = True
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -50,6 +52,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'registration',
     'students',
 )
 
