@@ -34,6 +34,14 @@ urlpatterns = patterns('',
     # Journal urls
     url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
 
+    # User Related urls
+    url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'},
+        name='auth_logout'),
+    url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'),
+        name='registration_complete'),
+    url(r'^users/', include('registration.backends.simple.urls',
+        namespace='users')),
+
     # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin',
         name='contact_admin'),
