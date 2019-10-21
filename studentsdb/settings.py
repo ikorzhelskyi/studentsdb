@@ -110,6 +110,11 @@ TEMPLATE_CONTEXT_PROCESSORS = \
     "studentsdb.context_processors.students_proc",
     "students.context_processors.groups_processor",
 )
+
+TEMPLATE_DIRS = (
+   os.path.join(BASE_DIR, 'studentsdb', 'templates'),
+)
+
 LOG_FILE = os.path.join(BASE_DIR, 'studentsdb.log')
 
 LOGGING = {
