@@ -44,13 +44,13 @@
       <!-- User's toolbar for authenticated users -->
       <div class="col-xs-2" id="user-toolbar">
         <span>{{ user.username }}</span> |
-        <a href="#">{% trans "Logout" %}</a>
+        <a href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
       </div>
       {% else %}
       <!-- User's toolbar for anonymous users -->
       <div class="col-xs-6" id="user-toolbar">
-        <a href="#">{% trans "Login" %}</a> |
-        <a href="#">{% trans "Register" %}</a>
+        <a href="{% url "users:auth_login" %}">{% trans "Login" %}</a> |
+        <a href="{% url "users:registration_register" %}">{% trans "Register" %}</a>
       </div>
       {% endif %}
       {% endblock groups_selector %}
