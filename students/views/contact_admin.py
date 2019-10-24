@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.decorators import permission_required
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -47,6 +48,7 @@ class ContactForm(forms.Form):
         label=_(u"Email Body"),
         widget=forms.Textarea)
 
+@permission_required('auth.add_user')
 def contact_admin(request):
     # check if form was posted
     if request.method == 'POST':
