@@ -1,10 +1,12 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 from django.views.generic.base import RedirectView, TemplateView
 
 from students.views.students import StudentUpdateView, StudentDeleteView
-from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
+from students.views.groups import GroupAddView, GroupUpdateView, \
+    GroupDeleteView, groups_list
 from students.views.journal import JournalView
 
 from .settings import MEDIA_ROOT, DEBUG
@@ -25,12 +27,12 @@ urlpatterns = patterns('',
          name='students_delete'),
 
     # Groups urls
-    url(r'^groups/$', 'students.views.groups.groups_list', name='groups'),
-    url(r'^groups/add/$', GroupAddView.as_view(),
+    url(r'^groups/$', login_required(groups_list), name='groups'),
+    url(r'^groups/add/$', login_required(GroupAddView.as_view()),
          name='groups_add'),
-    url(r'^groups/(?P<pk>\d+)/edit/$', GroupUpdateView.as_view(),
+    url(r'^groups/(?P<pk>\d+)/edit/$', login_required(GroupUpdateView.as_view()),
          name='groups_edit'),
-    url(r'^groups/(?P<pk>\d+)/delete/$', GroupDeleteView.as_view(),
+    url(r'^groups/(?P<pk>\d+)/delete/$', login_required(GroupDeleteView.as_view()),
          name='groups_delete'),
 
     # Journal urls
