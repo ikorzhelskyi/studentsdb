@@ -39,6 +39,8 @@ urlpatterns = patterns('',
     url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
 
     # User Related urls
+    url(r'^users/profile/$', login_required(TemplateView.as_view(
+        template_name='registration/profile.html')), name='profile'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'},
         name='auth_logout'),
     url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'),
