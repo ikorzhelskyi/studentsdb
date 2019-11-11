@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-18 18:41+0000\n"
+"POT-Creation-Date: 2019-11-11 08:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: models/groups.py:9 models/students.py:44 templates/students/base.html:35
+#: models/groups.py:9 models/students.py:44 templates/students/base.html:36
 #: templates/students/students_add.html:83
 msgid "Group"
 msgstr "Група"
 
-#: models/groups.py:10 templates/students/base.html:57
+#: models/groups.py:10 templates/students/base.html:72
 msgid "Groups"
 msgstr "Групи"
 
@@ -47,8 +47,6 @@ msgid "Monthly Journal"
 msgstr "Місячні Журнали"
 
 #: models/monthjournal.py:10
-#, fuzzy
-#| msgid "Monthly Journal"
 msgid "Monthly Journals"
 msgstr "Місячні Журнали"
 
@@ -61,7 +59,7 @@ msgstr "Студент"
 msgid "Date"
 msgstr "Дата"
 
-#: models/students.py:10 templates/students/base.html:55
+#: models/students.py:10 templates/students/base.html:69
 #: templates/students/students_list.html:7
 msgid "Students"
 msgstr "Студенти"
@@ -104,7 +102,7 @@ msgid "Please, correct the following errors."
 msgstr "Будь ласка, виправте наступні помилки."
 
 #: templates/students/base.html:7 templates/students/base.html.py:30
-#: templates/students/base.html:85
+#: templates/students/base.html:103
 msgid "Students Accounting Service"
 msgstr "Сервіс Обліку Студентів"
 
@@ -112,15 +110,31 @@ msgstr "Сервіс Обліку Студентів"
 msgid "App to manage students database"
 msgstr "Система Обліку Студентів Навчального Закладу"
 
-#: templates/students/base.html:37
+#: templates/students/base.html:38
 msgid "All Students"
 msgstr "Усі Студенти"
 
-#: templates/students/base.html:56 templates/students/students_list.html:72
+#: templates/students/base.html:47
+msgid "Logout"
+msgstr "Вихід"
+
+#: templates/students/base.html:52
+msgid "via Facebook"
+msgstr "через Facebook"
+
+#: templates/students/base.html:53
+msgid "Login"
+msgstr "Вхід"
+
+#: templates/students/base.html:54
+msgid "Register"
+msgstr "Реєстрація"
+
+#: templates/students/base.html:71 templates/students/students_list.html:72
 msgid "Journal"
 msgstr "Відвідування"
 
-#: templates/students/base.html:58
+#: templates/students/base.html:75
 msgid "Contact"
 msgstr "Контакт"
 
@@ -226,7 +240,7 @@ msgid "Add"
 msgstr "Додати"
 
 #: templates/students/students_add.html:108 views/groups.py:88
-#: views/students.py:205
+#: views/students.py:208
 msgid "Cancel"
 msgstr "Відмінити"
 
@@ -257,33 +271,33 @@ msgstr "№ Білету"
 msgid "Action"
 msgstr "Дія"
 
-#: views/contact_admin.py:37
+#: views/contact_admin.py:38
 msgid "Send"
 msgstr "Надіслати"
 
-#: views/contact_admin.py:40
+#: views/contact_admin.py:41
 msgid "Your Email Address"
 msgstr "Ваша Емейл Адреса"
 
-#: views/contact_admin.py:43
+#: views/contact_admin.py:44
 msgid "Email Subject"
 msgstr "Заголовок Листа"
 
-#: views/contact_admin.py:47
+#: views/contact_admin.py:48
 msgid "Email Body"
 msgstr "Текст Повідомлення"
 
-#: views/contact_admin.py:66
+#: views/contact_admin.py:68
 msgid "An error occured during email transfer. Please, try again later."
 msgstr ""
 "Під час відправки листа виникла непередбачувана помилка. Спробуйте "
 "скористатись даною формою пізніше."
 
-#: views/contact_admin.py:71
+#: views/contact_admin.py:73
 msgid "Message sent successfully!"
 msgstr "Повідомлення успішно надіслано!"
 
-#: views/groups.py:84 views/students.py:204
+#: views/groups.py:84 views/students.py:207
 msgid "Save"
 msgstr "Зберегти"
 
@@ -299,39 +313,39 @@ msgstr "Зміни успішно збережено!"
 msgid "Changes canceled."
 msgstr "Зміни скасовано."
 
-#: views/students.py:97
+#: views/students.py:100
 msgid "First Name field is required"
 msgstr "Ім'я є обов'язковим"
 
-#: views/students.py:103
+#: views/students.py:106
 msgid "Last Name field is required"
 msgstr "Прізвище є обов'язковим"
 
-#: views/students.py:109
+#: views/students.py:112
 msgid "Birthday is required"
 msgstr "Дата народження є обов'язковою"
 
-#: views/students.py:115
+#: views/students.py:118
 msgid "Please, enter correct date format (e.g. 1984-12-30)"
 msgstr "Будь-ласка, введіть правильний формат дати (напр. 1984-12-30"
 
-#: views/students.py:122
+#: views/students.py:125
 msgid "Ticket number is required"
 msgstr "Номер білету є обов'язковим"
 
-#: views/students.py:128
+#: views/students.py:131
 msgid "Please, select group"
 msgstr "Будь-ласка, оберіть групу"
 
-#: views/students.py:132
+#: views/students.py:135
 msgid "Please, select correct group"
 msgstr "Будь-ласка, оберіть коректну групу"
 
-#: views/students.py:146
+#: views/students.py:149
 msgid "Image file size cannot exceed 2MB"
 msgstr "Розмір файлу зображення не може перевищувати 2Мб"
 
-#: views/students.py:148
+#: views/students.py:151
 msgid ""
 "Invalid image format.Please, upload in one of the formats: *.jpg, *.jpeg, *."
 "png or *.bmp"
@@ -339,22 +353,22 @@ msgstr ""
 "Невірний формат зображення. Будь-ласка, завантажте в одному з форматів: *."
 "jpg, *.jpeg, *.png або *.bmp"
 
-#: views/students.py:165
+#: views/students.py:168
 msgid "Student added successfully!"
 msgstr "Студента додано успішно!"
 
-#: views/students.py:175
+#: views/students.py:178
 msgid "Student addition canceled!"
 msgstr "Додавання студента скасовано"
 
-#: views/students.py:226
+#: views/students.py:229
 msgid "Student updated successfully!"
 msgstr "Студента оновлено успішно!"
 
-#: views/students.py:232
+#: views/students.py:235
 msgid "Student update canceled!"
 msgstr "Редагування студента скасовано!"
 
-#: views/students.py:242
+#: views/students.py:249
 msgid "Student deleted successfully!"
 msgstr "Студента видалено успішно!"
