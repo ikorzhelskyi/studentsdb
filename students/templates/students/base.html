@@ -30,6 +30,24 @@
         <h1>{% trans "Students Accounting Service" %}</h1>
       </div>
       {% endblock logo %}
+      <!-- Language Select -->
+      <div class="col-xs-1" id='lang-select'>
+        <div class='lang-select-form'>
+          <form action="{% url "set_language" %}" method='post'>{% csrf_token %}
+            <input type='hidden' name='lang' value='uk'>
+            <input type='hidden' name='return-path' value='{{request.path}}'>
+            <button type='submit' class='btn btn-link'>Укр</button>
+          </form>
+        </div>
+        <div class='lang-select-form'>
+          <form action="{% url "set_language" %}" method='post'>{% csrf_token %}
+            <input type='hidden' name='lang' value='en'>
+            <input type='hidden' name='return-path' value='{{request.path}}'>
+            <button type='submit' class='btn btn-link'>Eng</button>
+          </form>
+        </div>
+      </div>
+      <!-- End Language Select -->
       {% block groups_selector %}
       {% if user.is_authenticated %}
       <div class="col-xs-4" id="group-selector">
@@ -42,7 +60,7 @@
         </select>
       </div>
       <!-- User's toolbar for authenticated users -->
-      <div class="col-xs-2" id="user-toolbar">
+      <div class="col-xs-6" id="user-toolbar">
         <a href="{% url "profile" %}">{{ user.get_full_name|default:user.username }}</a> |
         <a href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
       </div>

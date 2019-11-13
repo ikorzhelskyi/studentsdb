@@ -26,6 +26,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #555555;
 }
 
+/* Set Language Styles */
+#lang-select {
+    margin-top: 12px;
+    padding: 0;
+}
+#lang-select button {
+    padding: 0;
+}
+.lang-select-form {
+    display:inline-block;
+}
+
 /* Journal Table Styles */
 td.day-box,
 th.day-header {
