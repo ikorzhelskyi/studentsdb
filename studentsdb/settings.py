@@ -126,7 +126,8 @@ SOCIAL_AUTH_FACEBOOK_KEY = ''
 SOCIAL_AUTH_FACEBOOK_SECRET = ''
 
 TEMPLATE_DIRS = (
-   os.path.join(BASE_DIR, 'studentsdb', 'templates'),
+    os.path.join(BASE_DIR, 'students', 'templates', 'students'),
+    os.path.join(BASE_DIR, 'stud_auth', 'templates'),
 )
 
 LOG_FILE = os.path.join(BASE_DIR, 'studentsdb.log')
