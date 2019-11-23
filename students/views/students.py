@@ -16,7 +16,7 @@ from crispy_forms.bootstrap import FormActions
 from PIL import Image
 
 from ..models import Student, Group
-from ..util import paginate, get_current_group
+from ..util import paginate, get_current_group, DispatchLoginRequired
 
 def students_list(request):
     # check if we need to show only one group of students
@@ -219,7 +219,7 @@ class StudentUpdateForm(ModelForm):
                 code='invalid')
         return self.cleaned_data['student_group']
 
-class StudentUpdateView(UpdateView):
+class StudentUpdateView(DispatchLoginRequired, UpdateView):
     model = Student
     template_name = 'students/students_edit.html'
     form_class = StudentUpdateForm
@@ -236,18 +236,10 @@ class StudentUpdateView(UpdateView):
         else:
             return super(StudentUpdateView, self).post(request, *args, **kwargs)
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(StudentUpdateView, self).dispatch(*args, **kwargs)
-
-class StudentDeleteView(DeleteView):
+class StudentDeleteView(DispatchLoginRequired, DeleteView):
     model = Student
     template_name = 'students/students_confirm_delete.html'
 
     def get_success_url(self):
         return u'%s?status_message=%s' % (reverse('home'),
             _(u"Student deleted successfully!"))
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(StudentDeleteView, self).dispatch(*args, **kwargs)

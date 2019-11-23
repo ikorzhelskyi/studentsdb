@@ -6,10 +6,10 @@ from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 
 from ..models import MonthJournal, Student
-from ..util import paginate
+from ..util import paginate, DispatchLoginRequired
 
 
-class JournalView(TemplateView):
+class JournalView(DispatchLoginRequired, TemplateView):
     template_name = 'students/journal.html'
 
     def get_context_data(self, **kwargs):

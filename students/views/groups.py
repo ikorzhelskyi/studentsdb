@@ -11,7 +11,7 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Group
-from ..util import paginate, get_current_group
+from ..util import paginate, get_current_group, DispatchLoginRequired
 
 def groups_list(request):
     """Returns page with list of groups."""
@@ -114,16 +114,16 @@ class BaseGroupFormView(object):
             return super(BaseGroupFormView, self).post(
                 request, *args, **kwargs)
 
-class GroupAddView(BaseGroupFormView, CreateView):
+class GroupAddView(DispatchLoginRequired, BaseGroupFormView, CreateView):
     model = Group
     form_class = GroupForm
     template_name = 'students/groups_form.html'
 
-class GroupUpdateView(BaseGroupFormView, UpdateView):
+class GroupUpdateView(DispatchLoginRequired, BaseGroupFormView, UpdateView):
     model = Group
     form_class = GroupForm
     template_name = 'students/groups_form.html'
 
-class GroupDeleteView(BaseGroupFormView, DeleteView):
+class GroupDeleteView(DispatchLoginRequired, BaseGroupFormView, DeleteView):
     model = Group
     template_name = 'students/groups_confirm_delete.html'
