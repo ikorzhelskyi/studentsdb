@@ -1,4 +1,4 @@
-"""Custom userful utils for student application"""
+"""Custom userful utils for students application"""
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.decorators import method_decorator, classonlymethod
 from django.contrib.auth.decorators import login_required
