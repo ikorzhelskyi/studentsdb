@@ -3,7 +3,7 @@ from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-#from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms import ModelForm, ValidationError
 from django.views.generic import UpdateView, DeleteView
 from django.utils.translation import ugettext as _
@@ -52,36 +52,41 @@ def students_list(request):
 #    return render(request, 'students/students_list.html',
 #        {'students': students})
 
-    # implement pagination without 'paginator'
-    # count of pages:
-    num_rows_per_page = 3
-    if len(students):
-        num_pages = len(students) // num_rows_per_page
-    else:
-        num_pages = 1
-    # if len(students) % num_rows_per_page > 0
-    if len(students) % num_rows_per_page:
-        num_pages += 1
-    page = request.GET.get('page')
-    # check if page is integer
-    try:
-        page = int(page)
-    except:
-        page = 1
-    # if page is out of range return last page
-    if page > num_pages:
-        page = num_pages
-    elif page < 1:
-        page = 1
-    students = students[ (page-1)*num_rows_per_page : page*num_rows_per_page ]
-    page_list = [p+1 for p in range(num_pages)]
-    return render(request, 'students/students_list.html',
-            {'students':students,
-            'page':page,
-            'num_pages':num_pages,
-            'num_rows_per_page':num_rows_per_page,
-            'page_list':page_list}
-            )
+#    # implement pagination without 'paginator'
+#   # count of pages:
+#    num_rows_per_page = 3
+#   if len(students):
+#        num_pages = len(students) // num_rows_per_page
+#    else:
+#        num_pages = 1
+#    # if len(students) % num_rows_per_page > 0
+#    if len(students) % num_rows_per_page:
+#        num_pages += 1
+#    page = request.GET.get('page')
+#    # check if page is integer
+#    try:
+#        page = int(page)
+#    except:
+#        page = 1
+#    # if page is out of range return last page
+#    if page > num_pages:
+#        page = num_pages
+#    elif page < 1:
+#        page = 1
+#    students = students[ (page-1)*num_rows_per_page : page*num_rows_per_page ]
+#    page_list = [p+1 for p in range(num_pages)]
+#    return render(request, 'students/students_list.html',
+#            {'students':students,
+#            'page':page,
+#            'num_pages':num_pages,
+#            'num_rows_per_page':num_rows_per_page,
+#            'page_list':page_list}
+#            )
+    # apply pagination, 3 students per page
+    context = paginate(students, 3, request, {},
+        var_name='students')
+
+    return render(request, 'students/students_list.html', context)
 
 @login_required
 def students_add(request):
