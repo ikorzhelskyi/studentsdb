@@ -43,6 +43,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 REGISTRATION_OPEN = True
 LOGIN_URL = 'users:auth_login'
 LOGOUT_URL = 'users:auth_logout'
+LOGIN_REDIRECT_URL = 'home'
 
 # Application definition
 
@@ -125,6 +126,10 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_FACEBOOK_KEY = ''
 SOCIAL_AUTH_FACEBOOK_SECRET = ''
+
+# for 'registration' app
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 1
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'students', 'templates', 'students'),
