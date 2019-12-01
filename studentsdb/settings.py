@@ -130,6 +130,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = ''
 # for 'registration' app
 REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 1
+REGISTRATION_FORM = 'stud_auth.forms.CustomRegForm'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'students', 'templates', 'students'),
