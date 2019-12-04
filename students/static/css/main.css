@@ -62,3 +62,7 @@ select,
 input {
   max-width: 300px;
 }
+
+#edit-profile-photo {
+    margin-left: 20%;
+}
