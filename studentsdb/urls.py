@@ -8,7 +8,7 @@ from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, \
     GroupDeleteView, groups_list
 from students.views.journal import JournalView
-from stud_auth.views import UsersListView, UserDetailView
+from stud_auth.views import UsersListView, UserDetailView, UserUpdateView
 from registration.backends.default import views as registration_views
 
 from .settings import MEDIA_ROOT, DEBUG
@@ -47,24 +47,37 @@ urlpatterns = patterns('',
         name='users_list'),
     url(r'^users/profile/(?P<pk>\d+)/$', login_required(UserDetailView.as_view()),
         name='user_profile'),
+    url(r'^users/profile/edit/$', login_required(UserUpdateView.as_view()),
+        name='user_profile_edit'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'},
         name='auth_logout'),
     url(r'^users/register/complete/$', RedirectView.as_view(pattern_name='home'),
         name='registration_complete'),
-    url(r'^users/', include('registration.backends.simple.urls',
-        namespace='users')),
     url(r'^users/activate/complete/$',
             TemplateView.as_view(template_name='registration/activation_complete.html'),
             name='registration_activation_complete'),
-    url(r'^users/password_reset/$', auth_views.password_reset, name='auth_password_reset'),
-    url(r'^users/register/$', registration_views.RegistrationView.as_view(), name='registration_register'),
-    url(r'^users/activate/(?P<activation_key>\w+)/$', registration_views.ActivationView.as_view(), name='registration_activate'),
-    url(r'^users/password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^users/password_reset/$', auth_views.password_reset,
+        name='auth_password_reset'),
+    url(r'^users/register/$', registration_views.RegistrationView.as_view(),
+        name='registration_register'),
+    url(r'^users/activate/(?P<activation_key>\w+)/$',
+        registration_views.ActivationView.as_view(),
+        name='registration_activate'),
+    url(r'^users/password_reset/done/$', auth_views.password_reset_done,
+        name='password_reset_done'),
     url(r'^users/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         auth_views.password_reset_confirm,
         name='password_reset_confirm'),
-    url(r'^users/reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
+    url(r'^users/reset/done/$', auth_views.password_reset_complete,
+        name='password_reset_complete'),
+    url(r'^users/password_change/$', auth_views.password_change,
+        name='password_change'),
+    url(r'^users/password_change/done/$',
+        RedirectView.as_view(pattern_name='profile'),
+        name='password_change_done'),
     url(r'^users/', include('registration.backends.default.urls', namespace='users')),
+    #url(r'^users/', include('registration.backends.simple.urls',
+    #    namespace='users')),
 
     # Social Auth Related urls
     url('^social/', include('social.apps.django_app.urls', namespace='social')),
