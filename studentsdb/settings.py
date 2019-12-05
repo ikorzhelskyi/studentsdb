@@ -21,7 +21,7 @@ ADMIN_EMAIL = 'ihork2109@gmail.com'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '********'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
