@@ -15,15 +15,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # PORTAL_URL = 'http://localhost:8000'
 
-# email settings
-# please, set here you smtp server details and your admin email
-ADMIN_EMAIL = 'ihork2109@gmail.com'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# We moved email settings to email_settings.py module which added to .gitignore
+# so we don't keep email host password in repository
+from .email_settings import *
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
