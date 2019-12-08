@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-11 08:26+0000\n"
+"POT-Creation-Date: 2019-12-08 17:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models/groups.py:9 models/students.py:44 templates/students/base.html:36
+#: models/groups.py:9 models/students.py:44 templates/students/base.html:54
 #: templates/students/students_add.html:83
 msgid "Group"
 msgstr ""
 
-#: models/groups.py:10 templates/students/base.html:72
+#: models/groups.py:10 templates/students/base.html:91
 msgid "Groups"
 msgstr ""
 
-#: models/groups.py:15 templates/students/groups_list.html:22
+#: models/groups.py:15 templates/students/groups_list.html:25
 msgid "Title"
 msgstr ""
 
-#: models/groups.py:18 templates/students/groups_list.html:31
+#: models/groups.py:18 templates/students/groups_list.html:34
 msgid "Leader"
 msgstr ""
 
@@ -57,18 +57,18 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: models/students.py:10 templates/students/base.html:69
-#: templates/students/students_list.html:7
+#: models/students.py:10 templates/students/base.html:88
+#: templates/students/students_list.html:9
 msgid "Students"
 msgstr ""
 
 #: models/students.py:15 templates/students/students_add.html:26
-#: templates/students/students_list.html:32
+#: templates/students/students_list.html:37
 msgid "First Name"
 msgstr ""
 
 #: models/students.py:20 templates/students/students_add.html:36
-#: templates/students/students_list.html:23
+#: templates/students/students_list.html:28
 msgid "Last Name"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgid "Birthday"
 msgstr ""
 
 #: models/students.py:35 templates/students/students_add.html:66
-#: templates/students/students_list.html:20
+#: templates/students/students_list.html:25
 msgid "Photo"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgid "Please, correct the following errors."
 msgstr ""
 
 #: templates/students/base.html:7 templates/students/base.html.py:30
-#: templates/students/base.html:103
+#: templates/students/base.html:123
 msgid "Students Accounting Service"
 msgstr ""
 
@@ -108,31 +108,35 @@ msgstr ""
 msgid "App to manage students database"
 msgstr ""
 
-#: templates/students/base.html:38
+#: templates/students/base.html:56
 msgid "All Students"
 msgstr ""
 
-#: templates/students/base.html:47
+#: templates/students/base.html:65
 msgid "Logout"
 msgstr ""
 
-#: templates/students/base.html:52
+#: templates/students/base.html:70
 msgid "via Facebook"
 msgstr ""
 
-#: templates/students/base.html:53
-msgid "Login"
+#: templates/students/base.html:71
+msgid "Log in"
 msgstr ""
 
-#: templates/students/base.html:54
+#: templates/students/base.html:72
 msgid "Register"
 msgstr ""
 
-#: templates/students/base.html:71 templates/students/students_list.html:72
+#: templates/students/base.html:90 templates/students/students_list.html:92
 msgid "Journal"
 msgstr ""
 
-#: templates/students/base.html:75
+#: templates/students/base.html:92
+msgid "Users"
+msgstr ""
+
+#: templates/students/base.html:95
 msgid "Contact"
 msgstr ""
 
@@ -172,22 +176,25 @@ msgstr ""
 msgid "Groups List"
 msgstr ""
 
-#: templates/students/groups_list.html:12
+#: templates/students/groups_list.html:14
 msgid "Add Group"
 msgstr ""
 
-#: templates/students/groups_list.html:50
-#: templates/students/students_list.html:46
+#: templates/students/groups_list.html:41
+#: templates/students/groups_list.html:56
+#: templates/students/students_list.html:52
 msgid "Actions"
 msgstr ""
 
-#: templates/students/groups_list.html:54 templates/students/journal.html:71
-#: templates/students/students_list.html:71
+#: templates/students/groups_list.html:60 templates/students/journal.html:71
+#: templates/students/students_list.html:70
+#: templates/students/students_list.html:77
+#: templates/students/students_list.html:91
 msgid "Edit"
 msgstr ""
 
-#: templates/students/groups_list.html:55
-#: templates/students/students_list.html:73
+#: templates/students/groups_list.html:61
+#: templates/students/students_list.html:93
 msgid "Delete"
 msgstr ""
 
@@ -220,7 +227,7 @@ msgstr ""
 
 #: templates/students/students_add.html:7
 #: templates/students/students_add.html:9
-#: templates/students/students_list.html:12
+#: templates/students/students_list.html:16
 msgid "Add Student"
 msgstr ""
 
@@ -233,7 +240,7 @@ msgid "Add"
 msgstr ""
 
 #: templates/students/students_add.html:108 views/groups.py:88
-#: views/students.py:208
+#: views/students.py:213
 msgid "Cancel"
 msgstr ""
 
@@ -252,15 +259,15 @@ msgstr ""
 msgid "Edit Student"
 msgstr ""
 
-#: templates/students/students_list.html:9
+#: templates/students/students_list.html:11
 msgid "Students List"
 msgstr ""
 
-#: templates/students/students_list.html:40
+#: templates/students/students_list.html:45
 msgid "Ticket #"
 msgstr ""
 
-#: templates/students/students_list.html:67
+#: templates/students/students_list.html:87
 msgid "Action"
 msgstr ""
 
@@ -288,7 +295,7 @@ msgstr ""
 msgid "Message sent successfully!"
 msgstr ""
 
-#: views/groups.py:84 views/students.py:207
+#: views/groups.py:84 views/students.py:212
 msgid "Save"
 msgstr ""
 
@@ -304,60 +311,60 @@ msgstr ""
 msgid "Changes canceled."
 msgstr ""
 
-#: views/students.py:100
+#: views/students.py:105
 msgid "First Name field is required"
 msgstr ""
 
-#: views/students.py:106
+#: views/students.py:111
 msgid "Last Name field is required"
 msgstr ""
 
-#: views/students.py:112
+#: views/students.py:117
 msgid "Birthday is required"
 msgstr ""
 
-#: views/students.py:118
+#: views/students.py:123
 msgid "Please, enter correct date format (e.g. 1984-12-30)"
 msgstr ""
 
-#: views/students.py:125
+#: views/students.py:130
 msgid "Ticket number is required"
 msgstr ""
 
-#: views/students.py:131
+#: views/students.py:136
 msgid "Please, select group"
 msgstr ""
 
-#: views/students.py:135
+#: views/students.py:140
 msgid "Please, select correct group"
 msgstr ""
 
-#: views/students.py:149
+#: views/students.py:154
 msgid "Image file size cannot exceed 2MB"
 msgstr ""
 
-#: views/students.py:151
+#: views/students.py:156
 msgid ""
 "Invalid image format.Please, upload in one of the formats: *.jpg, *.jpeg, *."
 "png or *.bmp"
 msgstr ""
 
-#: views/students.py:168
+#: views/students.py:173
 msgid "Student added successfully!"
 msgstr ""
 
-#: views/students.py:178
+#: views/students.py:183
 msgid "Student addition canceled!"
 msgstr ""
 
-#: views/students.py:229
+#: views/students.py:234
 msgid "Student updated successfully!"
 msgstr ""
 
-#: views/students.py:235
+#: views/students.py:240
 msgid "Student update canceled!"
 msgstr ""
 
-#: views/students.py:249
+#: views/students.py:250
 msgid "Student deleted successfully!"
 msgstr ""
