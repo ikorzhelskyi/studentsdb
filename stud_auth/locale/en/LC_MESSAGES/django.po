@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-13 07:35+0000\n"
+"POT-Creation-Date: 2019-12-08 18:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,94 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: forms.py:29
+msgid "Register"
+msgstr ""
+
+#: forms.py:30 forms.py:66
+msgid "Cancel"
+msgstr ""
+
+#: forms.py:65
+msgid "Save"
+msgstr ""
+
 #: models.py:12
 msgid "User Profile"
 msgstr ""
 
-#: models.py:18 templates/registration/profile.html:28
+#: models.py:13 models.py:14
+msgid "Additional User Info"
+msgstr ""
+
+#: models.py:20 templates/registration/profile.html:64
 msgid "Mobile Phone"
+msgstr ""
+
+#: models.py:26
+msgid "passport id"
+msgstr ""
+
+#: models.py:33
+msgid "address"
+msgstr ""
+
+#: models.py:39
+msgid "photo"
+msgstr ""
+
+#: templates/registration/activate.html:6
+msgid "Account activation failed!"
+msgstr ""
+
+#: templates/registration/activation_complete.html:5
+msgid "Account Activated"
+msgstr ""
+
+#: templates/registration/activation_complete.html:9
+msgid "Your account is now activated."
+msgstr ""
+
+#: templates/registration/activation_complete.html:11
+msgid "You can "
+msgstr ""
+
+#: templates/registration/activation_complete.html:11
+msgid "log in."
+msgstr ""
+
+#: templates/registration/activation_email.html:9
+msgid "registration"
+msgstr ""
+
+#: templates/registration/activation_email.html:14
+#, python-format
+msgid ""
+"\n"
+"    You (or someone pretending to be you) have asked to register an account "
+"at\n"
+"    %(site_name)s.  If this wasn't you, please ignore this email\n"
+"    and your address will be removed from our records.\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.html:21
+#, python-format
+msgid ""
+"\n"
+"    To activate this account, please click the following link within the "
+"next\n"
+"    %(expiration_days)s days:\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.html:33
+#, python-format
+msgid ""
+"\n"
+"    Sincerely,\n"
+"    %(site_name)s Management\n"
+"    "
 msgstr ""
 
 #: templates/registration/login.html:5 templates/registration/login.html:7
@@ -30,49 +112,67 @@ msgid "Login Form"
 msgstr ""
 
 #: templates/registration/login.html:15
-#: templates/registration/registration_form.html:11
+#: templates/registration/registration_form.html:13
 msgid "Please, correct the following errors."
 msgstr ""
 
 #: templates/registration/login.html:28
-#: templates/registration/registration_form.html:22
 msgid "Your Username"
 msgstr ""
 
 #: templates/registration/login.html:35
-#: templates/registration/registration_form.html:36
 msgid "Your Password"
 msgstr ""
 
 #: templates/registration/login.html:41
-msgid "Login"
+msgid "Log in"
 msgstr ""
 
-#: templates/registration/profile.html:14
-msgid "Email"
+#: templates/registration/profile.html:30
+#: templates/registration/profile_edit.html:27
+msgid "Change password"
 msgstr ""
 
-#: templates/registration/profile.html:21
+#: templates/registration/profile.html:38
+msgid "Photo"
+msgstr ""
+
+#: templates/registration/profile.html:50
+#: templates/registration/users_list.html:16
 msgid "Username"
 msgstr ""
 
-#: templates/registration/profile.html:35
+#: templates/registration/profile.html:57
+#: templates/registration/users_list.html:18
+msgid "Email"
+msgstr ""
+
+#: templates/registration/profile.html:71
+msgid "Address"
+msgstr ""
+
+#: templates/registration/profile.html:78
+msgid "Passport id"
+msgstr ""
+
+#: templates/registration/profile.html:85
 msgid "Joined"
 msgstr ""
 
-#: templates/registration/registration_form.html:5
 #: templates/registration/registration_form.html:7
+#: templates/registration/registration_form.html:9
 msgid "Register Form"
 msgstr ""
 
-#: templates/registration/registration_form.html:29
-msgid "Your Email"
+#: templates/registration/users_list.html:6
+#: templates/registration/users_list.html:8
+msgid "Users List"
 msgstr ""
 
-#: templates/registration/registration_form.html:43
-msgid "Confirm Password"
+#: templates/registration/users_list.html:17
+msgid "Full Name"
 msgstr ""
 
-#: templates/registration/registration_form.html:49
-msgid "Register"
+#: views.py:26
+msgid "Profile successfully updated!"
 msgstr ""
