@@ -27,8 +27,8 @@
 {% assign_variable user_info user as profile %} 
 
 {% if profile.username == user.username %}
-<a href="{% url "password_change" %}">[ {% trans "Change password" %} ]</a>
-<a href="{% url "user_profile_edit" %}">[ Edit profile ]</a>
+<a href="{% url "password_change" %}">{% trans "Change password" %}</a> | 
+<a href="{% url "user_profile_edit" %}">{% trans "Edit profile" %}</a>
 {% endif %}
 <br><br>
 
@@ -75,7 +75,7 @@
 
     {% if profile.stprofile.passport_id %}
     <tr>
-        <td>{% trans "Passport id" %}:</td>
+        <td>{% trans "Passport ID" %}:</td>
         <td>{{ profile.stprofile.passport_id }}</td>
     </tr>
     {% endif %}

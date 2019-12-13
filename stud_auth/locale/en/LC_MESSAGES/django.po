@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 18:34+0000\n"
+"POT-Creation-Date: 2019-12-13 20:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,16 +41,16 @@ msgstr ""
 msgid "Mobile Phone"
 msgstr ""
 
-#: models.py:26
-msgid "passport id"
+#: models.py:26 templates/registration/profile.html:78
+msgid "Passport ID"
 msgstr ""
 
-#: models.py:33
-msgid "address"
+#: models.py:33 templates/registration/profile.html:71
+msgid "Address"
 msgstr ""
 
-#: models.py:39
-msgid "photo"
+#: models.py:39 templates/registration/profile.html:38
+msgid "Photo"
 msgstr ""
 
 #: templates/registration/activate.html:6
@@ -133,8 +133,8 @@ msgstr ""
 msgid "Change password"
 msgstr ""
 
-#: templates/registration/profile.html:38
-msgid "Photo"
+#: templates/registration/profile.html:31
+msgid "Edit profile"
 msgstr ""
 
 #: templates/registration/profile.html:50
@@ -147,16 +147,21 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: templates/registration/profile.html:71
-msgid "Address"
-msgstr ""
-
-#: templates/registration/profile.html:78
-msgid "Passport id"
-msgstr ""
-
 #: templates/registration/profile.html:85
 msgid "Joined"
+msgstr ""
+
+#: templates/registration/profile_edit.html:13
+#: templates/registration/profile_edit.html:18
+msgid "Edit"
+msgstr ""
+
+#: templates/registration/registration_complete.html:5
+msgid "Activation email sent"
+msgstr ""
+
+#: templates/registration/registration_complete.html:8
+msgid "Please check your email to complete the registration process."
 msgstr ""
 
 #: templates/registration/registration_form.html:7

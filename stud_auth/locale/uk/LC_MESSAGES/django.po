@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 18:34+0000\n"
+"POT-Creation-Date: 2019-12-13 20:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,16 +43,16 @@ msgstr "Додаткова інформація про користувача"
 msgid "Mobile Phone"
 msgstr "Мобільний телефон"
 
-#: models.py:26
-msgid "passport id"
+#: models.py:26 templates/registration/profile.html:78
+msgid "Passport ID"
 msgstr "Номер паспорту"
 
-#: models.py:33
-msgid "address"
+#: models.py:33 templates/registration/profile.html:71
+msgid "Address"
 msgstr "Адреса"
 
-#: models.py:39
-msgid "photo"
+#: models.py:39 templates/registration/profile.html:38
+msgid "Photo"
 msgstr "Фото"
 
 #: templates/registration/activate.html:6
@@ -65,7 +65,7 @@ msgstr "Акаунт активовано"
 
 #: templates/registration/activation_complete.html:9
 msgid "Your account is now activated."
-msgstr "Ваш акаунт активовано"
+msgstr "Ваш акаунт активовано."
 
 #: templates/registration/activation_complete.html:11
 msgid "You can "
@@ -73,11 +73,9 @@ msgstr "Ви можете "
 
 #: templates/registration/activation_complete.html:11
 msgid "log in."
-msgstr "увійти"
+msgstr "увійти."
 
 #: templates/registration/activation_email.html:9
-#, fuzzy
-#| msgid "Register"
 msgid "registration"
 msgstr "Реєстрація"
 
@@ -92,8 +90,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"   Ви (або хтось, хто видає себе за вас) залишили запит на реєстрацію акаунта "
-"на\n"
+"   Ви (або хтось, хто видає себе за вас) залишили запит на реєстрацію "
+"акаунта на\n"
 "   %(site_name)s. Якщо це були не ви, будь ласка, проігноруєте це "
 "повідомлення\n"
 "   і ваша адреса буде видалена з нашої бази.\n"
@@ -132,7 +130,7 @@ msgstr "Форма Входу"
 #: templates/registration/login.html:15
 #: templates/registration/registration_form.html:13
 msgid "Please, correct the following errors."
-msgstr "Будь-ласка, виправте наступні помилки"
+msgstr "Будь-ласка, виправте наступні помилки."
 
 #: templates/registration/login.html:28
 msgid "Your Username"
@@ -151,9 +149,9 @@ msgstr "Увійти"
 msgid "Change password"
 msgstr "Змінити пароль"
 
-#: templates/registration/profile.html:38
-msgid "Photo"
-msgstr "Фото"
+#: templates/registration/profile.html:31
+msgid "Edit profile"
+msgstr "Редагувати профіль"
 
 #: templates/registration/profile.html:50
 #: templates/registration/users_list.html:16
@@ -165,17 +163,22 @@ msgstr "Ім'я користувача"
 msgid "Email"
 msgstr "Електронна Адреса"
 
-#: templates/registration/profile.html:71
-msgid "Address"
-msgstr "Адреса"
-
-#: templates/registration/profile.html:78
-msgid "Passport id"
-msgstr "Номер паспорту"
-
 #: templates/registration/profile.html:85
 msgid "Joined"
 msgstr "Дата приєднання"
+
+#: templates/registration/profile_edit.html:13
+#: templates/registration/profile_edit.html:18
+msgid "Edit"
+msgstr "Редагувати"
+
+#: templates/registration/registration_complete.html:5
+msgid "Activation email sent"
+msgstr "Емейл з активацією надіслано"
+
+#: templates/registration/registration_complete.html:8
+msgid "Please check your email to complete the registration process."
+msgstr "Будь-ласка перевірте емейл для завершення процесу реєстрації."
 
 #: templates/registration/registration_form.html:7
 #: templates/registration/registration_form.html:9
@@ -194,3 +197,12 @@ msgstr "Повне ім'я"
 #: views.py:26
 msgid "Profile successfully updated!"
 msgstr "Профіль успішно оновлений!"
+
+#~ msgid "passport id"
+#~ msgstr "Номер паспорту"
+
+#~ msgid "address"
+#~ msgstr "Адреса"
+
+#~ msgid "photo"
+#~ msgstr "Фото"
