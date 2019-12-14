@@ -90,8 +90,6 @@
           <li role="presentation" {% if journal_page in request.path %} class="active" {% endif %}><a href="{{ journal_page }}">{% trans "Journal" %}</a></li>
           <li role="presentation" {% if groups_page in request.path %} class="active" {% endif %}><a href="{{ groups_page }}">{% trans "Groups" %}</a></li>
           <li role="presentation" {% if users_page in request.path %} class="active" {% endif %}><a href="{{ users_page }}">{% trans "Users" %}</a></li>
-          {% endif %}
-          {% if perms.auth.add_user %}
           <li role="presentation" {% if contact_admin in request.path %} class="active" {% endif %}><a href="{{ contact_admin }}">{% trans "Contact" %}</a></li>
           {% endif %}
         </ul>
