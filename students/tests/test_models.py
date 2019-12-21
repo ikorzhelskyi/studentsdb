@@ -15,7 +15,6 @@ class ModelsTest(TestCase):
         self.group1 = Group(title='Title', leader=self.student)
         self.journal = MonthJournal(student=self.student, date=datetime.today())
 
-
     def test_student_unicode(self):
         self.assertEqual(unicode(self.student), u'Demo Student')
 
