@@ -5,3 +5,5 @@ django-crispy-forms==1.4.0
 python-dateutil
 django-registration-redux==1.2
 python-social-auth==0.2.12
+django-coverage==1.2.4
+coverage==3.7.1

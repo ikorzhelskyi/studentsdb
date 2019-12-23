@@ -30,6 +30,9 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# directory to put html files with tests coverage report
+COVERAGE_REPORT_HTML_OUTPUT_DIR = os.path.join(BASE_DIR, '..', 'coverage')
+
 ALLOWED_HOSTS = []
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -51,6 +54,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'registration',
     'social.apps.django_app.default',
+    'django_coverage',
     'students',
     'stud_auth',
 )
