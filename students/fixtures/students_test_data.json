@@ -1,13 +1,13 @@
 [
 {
     "fields": {
-        "first_name": "Vitaliy",
-        "last_name": "Podoba",
-        "middle_name": "Ivanovych",
-        "photo": "./podoba.jpg",
+        "first_name": "Ihor",
+        "last_name": "Korzhelskyi",
+        "middle_name": "Middle Name",
+        "photo": "./1.jpg",
         "notes": "",
         "student_group": 1,
-        "birthday": "1984-06-17",
+        "birthday": "1988-10-10",
         "ticket": "000"
     },
     "model": "students.student",
@@ -57,8 +57,7 @@
 },
 {
     "fields": {
-        "notes": "",
-        "leader": 1,
+        "leader": 2,
         "title": "Group1"
     },
     "model": "students.group",
@@ -66,12 +65,27 @@
 },
 {
     "fields": {
-        "notes": "",
         "leader": null,
         "title": "Group2"
     },
     "model": "students.group",
     "pk": 2
+},
+{
+    "fields": {
+        "leader": null,
+        "title": "Group3"
+    },
+    "model": "students.group",
+    "pk": 3
+},
+{
+    "fields": {
+        "leader": null,
+        "title": "Group4"
+    },
+    "model": "students.group",
+    "pk": 4
 },
 {
     "fields": {
@@ -81,12 +95,12 @@
         "is_active": true,
         "is_superuser": true,
         "is_staff": true,
-        "last_login": "2014-11-19T00:17:12.803Z",
+        "last_login": "2019-11-19T00:17:12.803Z",
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$vwDz0jnc05bN$cZSSKKOkBa0RNAvEyRqNY1OrIfFpH6mpOxdLyc2aB0g=",
         "email": "admin@admin.com",
-        "date_joined": "2014-11-01T12:59:32.011Z"
+        "date_joined": "2019-11-01T12:59:32.011Z"
     },
     "model": "auth.user",
     "pk": 1

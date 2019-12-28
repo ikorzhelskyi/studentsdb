@@ -35,7 +35,7 @@ class TestStudentUpdateForm(TestCase):
         self.assertIn('name="add_button"', response.content)
         self.assertIn('name="cancel_button"', response.content)
         self.assertIn('action="%s"' % self.url, response.content)
-        self.assertIn('podoba.jpg', response.content)
+        self.assertIn('1.jpg', response.content)
 
     def test_success(self):
         # login as admin to access student edit form
