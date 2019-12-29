@@ -2,6 +2,7 @@ from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from calendar import monthrange, weekday, day_abbr
 
+from django.http import JsonResponse
 from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 
