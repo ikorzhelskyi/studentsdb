@@ -6,4 +6,5 @@ python-dateutil
 django-registration-redux==1.2
 python-social-auth==0.2.12
 django-coverage==1.2.4
-coverage==3.7.1
+coverage==4.0.3
+django-jenkins==0.18.1

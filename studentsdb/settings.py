@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'django_coverage',
     'students',
     'stud_auth',
+    'django_jenkins',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,6 +135,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'students', 'templates', 'students'),
     os.path.join(BASE_DIR, 'stud_auth', 'templates'),
 )
+
+JENKINS_TASKS = ('django_jenkins.tasks.run_pylint',
+                 'django_jenkins.tasks.run_pep8',
+                 'django_jenkins.tasks.run_pyflakes',)
 
 LOG_FILE = os.path.join(BASE_DIR, 'studentsdb.log')
 
