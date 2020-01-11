@@ -2,11 +2,11 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.decorators import method_decorator, classonlymethod
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
 
 
 class DispatchLoginRequired(object):
     """Base class for restrict access to views"""
+
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         if request.method.lower() in self.http_method_names:

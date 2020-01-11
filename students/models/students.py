@@ -40,7 +40,8 @@ class Student(models.Model):
         blank=False,
         verbose_name=_(u"Ticket"))
 
-    student_group = models.ForeignKey('Group',
+    student_group = models.ForeignKey(
+        'Group',
         verbose_name=_(u"Group"),
         blank=False,
         null=True,
