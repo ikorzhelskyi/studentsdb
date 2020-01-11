@@ -5,11 +5,12 @@ from django.utils.translation import ugettext_lazy as _
 class MonthJournal(models.Model):
     """Student Monthly Journal"""
 
-    class Meta:
+    class Meta(object):
         verbose_name = _(u"Monthly Journal")
         verbose_name_plural = _(u"Monthly Journals")
 
-    student = models.ForeignKey('Student',
+    student = models.ForeignKey(
+        'Student',
         verbose_name=_(u"Student"),
         blank=False,
         unique_for_month='date')

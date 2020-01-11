@@ -21,23 +21,23 @@ class StProfile(models.Model):
         verbose_name=_(u"Mobile Phone"),
         default='')
 
-    passport_id = models.CharField(
-        max_length = 8,
-        blank = True,
-        verbose_name = _(u'Passport ID'),
-        default = '',
+    passport_id=models.CharField(
+        max_length=8,
+        blank=True,
+        verbose_name=_(u'Passport ID'),
+        default='',
     )
 
-    address = models.CharField(
-        max_length = 256,
-        blank = True,
-        verbose_name = _(u'Address'),
-        default = '',
+    address=models.CharField(
+        max_length=256,
+        blank=True,
+        verbose_name=_(u'Address'),
+        default='',
     )
 
-    photo = models.ImageField(
-        blank = True,
-        verbose_name = _(u'Photo'),
+    photo=models.ImageField(
+        blank=True,
+        verbose_name=_(u'Photo'),
     )
 
     def __unicode__(self):
