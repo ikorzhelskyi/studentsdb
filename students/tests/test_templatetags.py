@@ -1,3 +1,4 @@
+"""Test custom template tags"""
 from django.template import Template, Context
 from django.test import TestCase
 from django.core.paginator import Paginator
@@ -5,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 class TemplateTagTests(TestCase):
+    """Test custom template tags"""
 
     def test_pagenav_tag(self):
         """Pagenav tag returns page navigation widget"""
