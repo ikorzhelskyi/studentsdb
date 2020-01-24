@@ -14,10 +14,10 @@ def log_student_updated_added_event(sender, **kwargs):
     student = kwargs['instance']
     if kwargs['created']:
         logger.info("Student added: %s %s (ID: %d)", student.first_name,
-            student.last_name, student.id)
+                    student.last_name, student.id)
     else:
         logger.info("Student updated: %s %s (ID: %d)", student.first_name,
-            student.last_name, student.id)
+                    student.last_name, student.id)
 
 @receiver(post_delete, sender=Student)
 def log_student_deleted_event(sender, **kwargs):
@@ -26,4 +26,4 @@ def log_student_deleted_event(sender, **kwargs):
 
     student = kwargs['instance']
     logger.info("Student deleted: %s %s (ID: %d)", student.first_name,
-        student.last_name, student.id)
+                student.last_name, student.id)

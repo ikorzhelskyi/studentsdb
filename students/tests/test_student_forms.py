@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.test import TestCase, Client, override_settings
 from django.core.urlresolvers import reverse
 
@@ -40,12 +38,16 @@ class TestStudentUpdateForm(TestCase):
     def test_success(self):
         # login as admin to access student edit form
         self.client.login(username='admin', password='admin')
-    
+
         # post form with valid data
         group = Group.objects.filter(title='Group1')[0]
         response = self.client.post(self.url, {'first_name': 'Updated Name',
-            'last_name': 'Updated Last Name', 'ticket': '567',
-            'student_group': group.id, 'birthday': '1990-11-11'}, follow=True)
+                                               'last_name': 'Updated Last Name',
+                                               'ticket': '567',
+                                               'student_group': group.id,
+                                               'birthday': '1990-11-11'
+                                               },
+                                    follow=True)
 
         # check response status
         self.assertEqual(response.status_code, 200)
@@ -60,8 +62,8 @@ class TestStudentUpdateForm(TestCase):
         # check proper redirect after form post
         self.assertIn('Student updated successfully', response.content)
         self.assertEqual(response.redirect_chain[0][0],
-            'http://testserver/?status_message=' +
-            'Student%20updated%20successfully!')
+                         'http://testserver/?status_message=' +
+                         'Student%20updated%20successfully!')
 
     def test_cancel(self):
         # login as admin to access student edit form
@@ -69,12 +71,12 @@ class TestStudentUpdateForm(TestCase):
 
         # post form with Cancel button
         response = self.client.post(self.url, {'cancel_button': 'Cancel'},
-            follow=True)
+                                    follow=True)
 
         self.assertIn('Student update canceled!', response.content)
         self.assertEqual(response.redirect_chain[0][0],
-            'http://testserver/?status_message=' +
-            'Student%20update%20canceled!')
+                         'http://testserver/?status_message=' +
+                         'Student%20update%20canceled!')
 
     def test_access(self):
         # try to access form as anonymous user
@@ -88,7 +90,7 @@ class TestStudentUpdateForm(TestCase):
 
         # check redirect url
         self.assertEqual(response.redirect_chain[0],
-            ('http://testserver/users/login/?next=/students/1/edit/', 302))
+                         ('http://testserver/users/login/?next=/students/1/edit/', 302))
 
     def test_styles(self):
         # login as admin to access student edit form

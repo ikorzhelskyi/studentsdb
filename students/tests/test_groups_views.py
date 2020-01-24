@@ -20,7 +20,7 @@ class TestGroupsList(TestCase):
         self.assertIn('Log in', response.content)
         # check the redirection link
         self.assertEqual(response.redirect_chain[0][0],
-             'http://testserver/users/login/?next=/groups/')
+                         'http://testserver/users/login/?next=/groups/')
 
     def test_groups_list(self):
         self.client.login(username='admin', password='admin')
@@ -46,7 +46,7 @@ class TestGroupsList(TestCase):
     def test_reverse_order_by(self):
         self.client.login(username='admin', password='admin')
         response = self.client.get(self.url,
-                   {'order_by': 'leader', 'reverse': '1'})
+                                   {'order_by': 'leader', 'reverse': '1'})
         # check response status code
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.context['groups']), 3)
@@ -79,7 +79,7 @@ class TestGroupAdd(TestCase):
         self.assertIn('Log in', response.content)
         # check the redirection link
         self.assertEqual(response.redirect_chain[0][0],
-             'http://testserver/users/login/?next=/groups/add/')
+                         'http://testserver/users/login/?next=/groups/add/')
 
     def test_get_form(self):
         self.client.login(username='admin', password='admin')
@@ -141,7 +141,7 @@ class TestGroupUpdate(TestCase):
         self.assertIn('Log in', response.content)
         # check the redirection link
         self.assertEqual(response.redirect_chain[0][0],
-             'http://testserver/users/login/?next=/groups/1/edit/')
+                         'http://testserver/users/login/?next=/groups/1/edit/')
 
     def test_get_form(self):
         group = Group.objects.get(id=1)
@@ -211,7 +211,7 @@ class TestGroupDelete(TestCase):
         self.assertIn('Log in', response.content)
         # check the redirection link
         self.assertEqual(response.redirect_chain[0][0],
-             'http://testserver/users/login/?next=/groups/1/delete/')
+                         'http://testserver/users/login/?next=/groups/1/delete/')
         # and same cheking for POST
         response = self.client.post(self.url, follow=True)
         # we must have response status 200 and login page
@@ -219,7 +219,7 @@ class TestGroupDelete(TestCase):
         self.assertIn('Log in', response.content)
         # check the redirection link
         self.assertEqual(response.redirect_chain[0][0],
-             'http://testserver/users/login/?next=/groups/1/delete/')
+                         'http://testserver/users/login/?next=/groups/1/delete/')
 
     def test_confirm_delete(self):
         self.client.login(username='admin', password='admin')

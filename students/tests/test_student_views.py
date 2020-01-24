@@ -84,7 +84,7 @@ class TestStudentList(TestCase):
     def test_reverse_order_by(self):
         # order students by ticket number in reverse order
         response = self.client.get(self.url, {'order_by': 'ticket',
-            'reverse': '1'})
+                                              'reverse': '1'})
 
         # now check if we got proper order
         students = response.context['students']

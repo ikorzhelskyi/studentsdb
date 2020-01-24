@@ -15,10 +15,10 @@ class Group(models.Model):
         verbose_name=_(u"Title"))
 
     leader = models.OneToOneField('Student',
-        verbose_name=_(u"Leader"),
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL)
+                                  verbose_name=_(u"Leader"),
+                                  blank=True,
+                                  null=True,
+                                  on_delete=models.SET_NULL)
 
     notes = models.TextField(
         blank=True,
@@ -27,6 +27,6 @@ class Group(models.Model):
     def __unicode__(self):
         if self.leader:
             return u"%s (%s %s)" % (self.title, self.leader.first_name,
-                 self.leader.last_name)
+                                    self.leader.last_name)
         else:
             return u"%s" % (self.title,)

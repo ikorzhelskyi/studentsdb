@@ -24,14 +24,14 @@ class StudentSignalsTests(TestCase):
         # check output file content
         out.seek(0)
         self.assertEqual(out.readlines()[-1],
-            'Student added: Demo Student (ID: %d)\n' % student.id)
+                         'Student added: Demo Student (ID: %d)\n' % student.id)
 
         # now update existing student and check last line in out
         student.ticket = '12345'
         student.save()
         out.seek(0)
         self.assertEqual(out.readlines()[-1],
-            'Student updated: Demo Student (ID: %d)\n' % student.id)
+                         'Student updated: Demo Student (ID: %d)\n' % student.id)
 
         # remove our handler from root logger
         logging.root.removeHandler(handler)
@@ -52,7 +52,7 @@ class StudentSignalsTests(TestCase):
         student.delete()
         out.seek(0)
         self.assertEqual(out.readlines()[-1],
-            'Student deleted: Demo Student (ID: %d)\n' % sid)
+                         'Student deleted: Demo Student (ID: %d)\n' % sid)
 
         # remove our handler from root logger
         logging.root.removeHandler(handler)

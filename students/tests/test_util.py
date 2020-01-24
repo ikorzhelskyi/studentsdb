@@ -26,7 +26,7 @@ class UtilsTestCase(TestCase):
             last_name="Korzhelskyi",
             birthday=datetime.today(),
             ticket='12345')
-        
+
         # set student as leader for group1
         group1.leader = student
         group1.save()
@@ -58,7 +58,7 @@ class UtilsTestCase(TestCase):
         # check PageNotAnInteger case: ab string
         request.GET['page'] = 'ab'
         result = paginate([1, 2, 3, 4], 3, request, context,
-            var_name='object_list')
+                          var_name='object_list')
         self.assertEqual(len(result['object_list']), 3)
         self.assertEqual(result['is_paginated'], True)
         self.assertEqual(len(result['page_obj']), 3)
@@ -69,14 +69,14 @@ class UtilsTestCase(TestCase):
         # check empty page case: should be last page
         request.GET['page'] = '9999'
         result = paginate([1, 2, 3, 4], 3, request, context,
-            var_name='object_list')
+                          var_name='object_list')
         self.assertEqual(len(result['object_list']), 1)
         self.assertEqual(result['object_list'][0], 4)
 
         # check valid page: second page
         request.GET['page'] = '2'
         result = paginate([1, 2, 3, 4, 5], 3, request, context,
-            var_name='my_list')
+                          var_name='my_list')
         self.assertEqual(len(result['my_list']), 2)
         self.assertEqual(result['my_list'][0], 4)
         self.assertEqual(result['my_list'][1], 5)

@@ -55,4 +55,4 @@ class MonthJournal(models.Model):
 
     def __unicode__(self):
         return u'%s: %d, %d' % (self.student.last_name, self.date.month,
-            self.date.year)
+                                self.date.year)

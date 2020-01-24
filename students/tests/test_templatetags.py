@@ -19,7 +19,7 @@ class TemplateTagTests(TestCase):
             "{% load pagenav %}"
             "{% pagenav object_list is_paginated paginator %}"
         ).render(Context({'object_list': my_list, 'is_paginated': True,
-            'paginator': paginator}))
+                          'paginator': paginator}))
 
         # paginator should create 4 pages
         self.assertIn('<nav>', out)

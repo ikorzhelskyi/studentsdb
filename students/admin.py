@@ -26,7 +26,7 @@ class StudentAdmin(admin.ModelAdmin):
     list_filter = ['student_group']
     list_per_page = 10
     search_fields = ['last_name', 'first_name', 'middle_name', 'ticket',
-        'notes']
+                     'notes']
     form = StudentFormAdmin
 
     actions = ['copy_students']
@@ -50,7 +50,7 @@ class GroupFormAdmin(ModelForm):
         """ Check if leader is in the same group """
         new_leader = self.cleaned_data['leader']
         if hasattr(new_leader, 'student_group') and (
-        	    new_leader.student_group != self.instance):
+                   new_leader.student_group != self.instance):
             raise ValidationError(u"Студент не входить до даної групи!",
                                   code='invalid')
         return new_leader
