@@ -84,7 +84,7 @@ def students_list(request):
 #            )
     # apply pagination, 3 students per page
     context = paginate(students, 3, request, {},
-        var_name='students')
+                       var_name='students')
 
     return render(request, 'students/students_list.html', context)
 

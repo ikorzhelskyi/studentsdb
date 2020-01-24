@@ -45,7 +45,7 @@ def groups_list(request):
         # if page is out of range (e.g. 9999), deliver last page of results.
         groups = paginator.page(paginator.num_pages)
     return render(request, 'students/groups_list.html',
-         {'groups': groups})
+                  {'groups': groups})
 
 class GroupForm(ModelForm):
     class Meta:
@@ -79,10 +79,10 @@ class GroupForm(ModelForm):
         # add buttons
         if add_form:
             submit = Submit('add_button', _(u"Add"),
-                css_class="btn btn-primary")
+                            css_class="btn btn-primary")
         else:
             submit = Submit('save_button', _(u"Save"),
-                css_class="btn btn-primary")
+                            css_class="btn btn-primary")
         self.helper.layout[-1] = FormActions(
             submit,
             Submit('cancel_button', _(u"Cancel"), css_class="btn btn-link"),
@@ -95,15 +95,15 @@ class GroupForm(ModelForm):
         """ Check if leader is in the same group """
         new_leader = self.cleaned_data['leader']
         if hasattr(new_leader, 'student_group') and new_leader.student_group != self.instance:
-            raise ValidationError (_(u"Student is not in this group!"),
-                code='invalid')
+            raise ValidationError(_(u"Student is not in this group!"),
+                                   code='invalid')
         return new_leader
 
 class BaseGroupFormView(object):
 
     def get_success_url(self):
         return u'%s?status_message=%s' % (reverse('groups'),
-            _(u"Changes saved successfully!"))
+                                          _(u"Changes saved successfully!"))
 
     def post(self, request, *args, **kwargs):
         # handle cancel button

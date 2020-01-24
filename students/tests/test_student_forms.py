@@ -46,7 +46,7 @@ class TestStudentUpdateForm(TestCase):
                                                'ticket': '567',
                                                'student_group': group.id,
                                                'birthday': '1990-11-11'
-                                               },
+                                              },
                                     follow=True)
 
         # check response status

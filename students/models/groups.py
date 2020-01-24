@@ -14,11 +14,12 @@ class Group(models.Model):
         blank=False,
         verbose_name=_(u"Title"))
 
-    leader = models.OneToOneField('Student',
-                                  verbose_name=_(u"Leader"),
-                                  blank=True,
-                                  null=True,
-                                  on_delete=models.SET_NULL)
+    leader = models.OneToOneField(
+        'Student',
+        verbose_name=_(u"Leader"),
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL)
 
     notes = models.TextField(
         blank=True,
