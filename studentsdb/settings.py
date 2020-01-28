@@ -9,31 +9,25 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 from django.conf import global_settings
 
+from .env_settings import SECRET_KEY, DEBUG, TEMPLATE_DEBUG, ALLOWED_HOSTS
+from .env_settings import SOCIAL_AUTH_FACEBOOK_SECRET, SOCIAL_AUTH_FACEBOOK_KEY
+from .env_settings import DATABASES, STATIC_URL, MEDIA_URL, MEDIA_ROOT
+from .env_settings import ADMIN_EMAIL, EMAIL_HOST, EMAIL_PORT, EMAIL_USE_SSL
+from .env_settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS
+#from .env_settings import PORTAL_URL
+
+# in dev envrironment we may not have STATIC_ROOT defined
+try:
+    from .env_settings import STATIC_ROOT
+except ImportError:
+    pass
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# PORTAL_URL = 'http://localhost:8000'
-
-# We moved email settings to email_settings.py module which added to .gitignore
-# so we don't keep email host password in repository
-from .email_settings import *
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'oo=_=#b2bcclyz7yrv)hg^8g9t#zyng@9v6_#bkv(__$yis!d%'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
 # directory to put html files with tests coverage report
 COVERAGE_REPORT_HTML_OUTPUT_DIR = os.path.join(BASE_DIR, '..', 'coverage')
-
-ALLOWED_HOSTS = []
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
@@ -43,7 +37,6 @@ LOGOUT_URL = 'users:auth_logout'
 LOGIN_REDIRECT_URL = 'home'
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,14 +69,6 @@ ROOT_URLCONF = 'studentsdb.urls'
 
 WSGI_APPLICATION = 'studentsdb.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-# We moved DATABASES variable to db.py module which added to .gitignore
-# so we don't keep mysql passwords in repository
-from .db import DATABASES
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -102,13 +87,6 @@ USE_TZ = True
 # default timezone
 TIME_ZONE = 'UTC'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
-
 TEMPLATE_CONTEXT_PROCESSORS = \
     global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
@@ -123,14 +101,13 @@ AUTHENTICATION_BACKENDS = (
    'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
-
 # for 'registration' app
 REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_FORM = 'stud_auth.forms.CustomRegForm'
 
+# add project templates directory as Django does not
+# pick it default
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'students', 'templates', 'students'),
     os.path.join(BASE_DIR, 'stud_auth', 'templates'),
