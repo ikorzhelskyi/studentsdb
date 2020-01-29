@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-13 20:29+0000\n"
+"POT-Creation-Date: 2020-01-26 18:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,28 +29,50 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: models.py:12
+#: models.py:10
 msgid "User Profile"
 msgstr ""
 
-#: models.py:13 models.py:14
+#: models.py:11 models.py:12
 msgid "Additional User Info"
 msgstr ""
 
-#: models.py:20 templates/registration/profile.html:64
+#: models.py:21 templates/registration/profile.html:64
 msgid "Mobile Phone"
 msgstr ""
 
-#: models.py:26 templates/registration/profile.html:78
+#: models.py:27 templates/registration/profile.html:78
 msgid "Passport ID"
 msgstr ""
 
-#: models.py:33 templates/registration/profile.html:71
+#: models.py:34 templates/registration/profile.html:71
 msgid "Address"
 msgstr ""
 
-#: models.py:39 templates/registration/profile.html:38
+#: models.py:40 templates/registration/profile.html:38
 msgid "Photo"
+msgstr ""
+
+#: templates/404.html:6
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:8
+msgid "Sorry, we haven't found what you're looking for."
+msgstr ""
+
+#: templates/500.html:6
+msgid "Oops, error on the server"
+msgstr ""
+
+#: templates/500.html:8
+msgid "Oops, something went wrong :-("
+msgstr ""
+
+#: templates/500.html:13
+msgid ""
+"We recorded our mistake and will fix it soon. Please, get back to us a bit "
+"later."
 msgstr ""
 
 #: templates/registration/activate.html:6
