@@ -1,0 +1,10 @@
+*.pyc
+*∼
+*.egg-info
+*.mo
+*.egg
+db.py
+*.log
+email_settings.py
+reports/
+env_settings.py
